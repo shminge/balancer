@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./js",
+    "module": "esnext",
+    "target": "esnext",
+    "strict": true,
+    "moduleResolution": "bundler"
+  }
+}
