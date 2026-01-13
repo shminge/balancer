@@ -113,6 +113,14 @@ export class Reactive<T> {
         this.value = val;
     }
 
+    /**
+     * Helper function for setting things nicely with current value as context
+     * @param fn 
+     */
+    update(fn: (current: T) => T) {
+        this.set(fn(this.value))
+    } 
+
 }
 
 /**

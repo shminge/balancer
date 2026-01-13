@@ -97,6 +97,13 @@ export class Reactive {
     setSilent(val) {
         this.value = val;
     }
+    /**
+     * Helper function for setting things nicely with current value as context
+     * @param fn
+     */
+    update(fn) {
+        this.set(fn(this.value));
+    }
 }
 /**
  * Execute the code completely first, and update everything at the end
