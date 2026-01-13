@@ -29,3 +29,4 @@ export function createItemComponent(text: string, onRemove: (text: string) => vo
     container.append(span, button);
     return container;
 }
+
