@@ -1,9 +1,9 @@
-import { ObservableArray, Name, createItemComponent } from "./utils.js"
+import { ObservableArray, Name, createItemComponent, Transaction } from "./utils.js"
 
 
 // Script Setup
 const names = new ObservableArray<Name>()
-const owes = new Map<[Name, Name], number>()
+const transactions = new ObservableArray<Transaction>()
 
 names.subscribe(drawNames)
 

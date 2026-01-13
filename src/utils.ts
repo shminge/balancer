@@ -3,6 +3,12 @@
 /**One of the users who have been input */
 export type Name = string
 
+export type Transaction = {
+    paidBy: Name
+    amount: number
+    usedBy: Name[] 
+}
+
 /**
  * An array that can notify watchers of changes
  */
@@ -53,7 +59,23 @@ export function createItemComponent(text: string, onRemove: (text: string) => vo
     span.textContent = text;
 
     const button = document.createElement("button");
-    button.textContent = "✖"; // bin/cross icon
+    button.textContent = "✖";
+    button.addEventListener("click", () => onRemove(text));
+
+    container.append(span, button);
+    return container;
+}
+
+
+export function createDropdown(arr: Name[], onRemove: ) {
+    const container = document.createElement("div");
+    container.className = "name-dropdown";
+
+    const span = document.createElement("span");
+    span.textContent = text;
+
+    const button = document.createElement("button");
+    button.textContent = "✖";
     button.addEventListener("click", () => onRemove(text));
 
     container.append(span, button);
