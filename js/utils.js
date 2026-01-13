@@ -4,14 +4,13 @@
  * @param onRemove
  * @returns
  */
-export function createItemComponent(text, onRemove) {
+export function createItemComponent(item) {
     const container = document.createElement("div");
     container.className = "item";
-    const span = document.createElement("span");
-    span.textContent = text;
-    const button = document.createElement("button");
-    button.textContent = "✖"; // bin/cross icon
-    button.addEventListener("click", () => onRemove(text));
-    container.append(span, button);
+    const h1 = document.createElement("h1");
+    h1.textContent = item.title;
+    const desc = document.createElement("p");
+    desc.textContent = item.desc;
+    container.append(h1, desc);
     return container;
 }
